@@ -1,15 +1,16 @@
 'use strict';
 
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', `8pm `];
 let value = [];
-let data = [];
-// let storesCurrent = [
-//     {store: `Seattle`, value: 23, vista: 65, avgCookiePerSale: 6.3, hoursOpen: `6:00am - 8:00pm`},
-//     {store: `Tokyo`, value: 3, vista: 24, avgCookiePerSale: 1.2, hoursOpen: `6:00am - 8:00pm`},
-//     {store: `Dubai`, value: 11, vista: 38, avgCookiePerSale: 3.7, hoursOpen: `6:00am - 8:00pm`},
-//     {store: `Paris`, value: 20, vista: 38, avgCookiePerSale: 2.3, hoursOpen: `6:00am - 8:00pm`},
-//     {store: `Lima`, value: 2, vista: 16, avgCookiePerSale: 4.6, hoursOpen: `6:00am - 8:00pm`},
-// ];
+// let data = [];
+let cookiesSalesPerHour = [];
+let storesCurrent = [
+    {store: `Seattle`, value: 23, vista: 65, avgCookiePerSale: 6.3, hoursOpen: `6:00am - 8:00pm`},
+    {store: `Tokyo`, value: 3, vista: 24, avgCookiePerSale: 1.2, hoursOpen: `6:00am - 8:00pm`},
+    {store: `Dubai`, value: 11, vista: 38, avgCookiePerSale: 3.7, hoursOpen: `6:00am - 8:00pm`},
+    {store: `Paris`, value: 20, vista: 38, avgCookiePerSale: 2.3, hoursOpen: `6:00am - 8:00pm`},
+    {store: `Lima`, value: 2, vista: 16, avgCookiePerSale: 4.6, hoursOpen: `6:00am - 8:00pm`},
+];
 //Gives me the calculation, through mapping for one "hour".  Now need to get it to go for all hours of operation. - works
 // let cust = storesCurrent.map (data => (Math.random()*((data.vista - data.value) * data.avgCookiePerSale)).toFixed(2));
 //     let diff = cust;
@@ -77,5 +78,43 @@ const lima = new Store (`Lima`, 2, 16, 4.6, `6:00am - 8:00pm`);
 lima.setCookieSalesPerHour();
 lima.setTotalDaily();
 
-console.log(seattle);
+// console.log(seattle);
+
+//Trying to get bullets to work - does NOT work
+// const seattleList = document.querySelector(".seattleList");
+// let list = document.createElement ("LI");
+// seattleList.innerText = `storesCurrent.seattle`;
+// document.body.appendChild(seattleList);
+
+//Need to write to the table
+
+// let table = document.getElementById("storesTable");
+
+function generateTableHead(table, hours) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of hours) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, hours) {
+    for(let element of hours) {
+        let row = table.insertRow();
+        for (let key in element) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(element[key]);
+            cell.appendChild(text);
+        }
+    }
+ };
+
+let table = document.querySelector("table");
+// let data = hours [0];
+generateTable(table, cookiesSalesPerHour);
+generateTableHead(table, hours);
+
 
