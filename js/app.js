@@ -1,6 +1,7 @@
 'use strict';
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', `8pm `];
+let stores = [`Seattle`, `Tokyo`, `Dubai`, `Paris`, `Lima`];
 let value = [];
 // let data = [];
 let cookiesSalesPerHour = [];
@@ -88,33 +89,64 @@ lima.setTotalDaily();
 
 //Need to write to the table
 
-// let table = document.getElementById("storesTable");
+//The functions below (down to ** line) worked to create header row, but not other rows
+// function generateTable(table, stores) {
+//     for(let element of stores) {
+//         let row = table.insertRow();
+//         for (let key in element) {
+//             let cell = row.insertCell();
+//             let text = document.createTextNode(element[key]);
+//             cell.appendChild(text);
+//         }
+//     }
+//  };
 
-function generateTableHead(table, hours) {
-    let thead = table.createTHead();
-    let row = thead.insertRow();
-    for (let key of hours) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(key);
-        th.appendChild(text);
-        row.appendChild(th);
-    }
+// function generateTableHead(table, hours) {
+//     let thead = table.createTHead();
+//     let row = thead.insertRow();
+//     for (let key of hours) {
+//         let th = document.createElement("th");
+//         let text = document.createTextNode(key);
+//         th.appendChild(text);
+//         row.appendChild(th);
+//     }
+// };
+
+// let table = document.querySelector("table");
+// // let data = hours [0];
+// generateTable(table, stores);
+// generateTableHead(table, hours);
+//********************************************** */
+
+//document is the webpage window and getElementById is "opening" that element to write/create to it.  Have to "open" by layers (ie: main then table then head then row, etc.)
+
+//Legend:
+//stores (in html) = main section in html
+//storesTable (in JS) - storesTable (in html) = table for the stores data
+//storesTHead (in JS) - storesTableHead (in html) = houses the header row data
+//storesTHRow (in JS) - storesTableHeadRow (in html) = this will show the times for the cookie sales per hour
+//storesData (in JS) - td (in html)
+
+
+let parentElement = document.getElementById(`stores`);
+let storesTable = document.getElementById(`storesTable`);
+
+function createHeaderRow() {
+    let storesTHead = document.getElementById(`storesTableHead`);
+    let storesTHRow = document.getElementById(`storesTableHeadRow`);
+    let storesData = document.createElement(`td`);
+    storesTHRow.appendChild(storesData);
+
+
+//create rows of stores data
+    for (let i = 0; i < hours.length; i++) {
+    let hourData = document.createElement(`td`);
+    hourData.textContent = hours[i];
+    storesTHRow.appendChild(hourData);
 }
 
-function generateTable(table, hours) {
-    for(let element of hours) {
-        let row = table.insertRow();
-        for (let key in element) {
-            let cell = row.insertCell();
-            let text = document.createTextNode(element[key]);
-            cell.appendChild(text);
-        }
-    }
- };
-
-let table = document.querySelector("table");
-// let data = hours [0];
-generateTable(table, cookiesSalesPerHour);
-generateTableHead(table, hours);
-
-
+storesData.textContent = `Daily Location Total`;
+storesTHRow.appendChild(storesData);
+storesTHead.appendChild(storesTHRow);
+storesTable.appendChild(storesTHead);
+};
