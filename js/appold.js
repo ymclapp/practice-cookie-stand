@@ -27,7 +27,6 @@ Loc.prototype.setCookiesEachHour = function() {
 Loc.prototype.setCookieSum = function() {
   for (var i= 0; i < this.cookiesEachHour.length; i++) {
     this.totalDailyCookies += this.cookiesEachHour[i];
-
   }
 };
 
@@ -35,10 +34,6 @@ Loc.prototype.setCookieSum = function() {
 function random(custMin, custMax, cookiesEachHour) {
   return Math.floor(Math.random() * ((custMax - custMin) + custMin) * cookiesEachHour);
 }
-
-******--------------^^^^^^Everything ABOVE is complete - this is the code to create the stores and calculations^^^^^^-------------------******
-
-**----------Everything BELOW is to create the table of sales data-------------**
 
 var parentElement = document.getElementById('locations');
 
@@ -117,19 +112,15 @@ function sumArray(i) {
 var seattleLoc = new Loc ('Seattle Store', 23,65, 6.3);
 seattleLoc.setCookiesEachHour();
 seattleLoc.setCookieSum();
-
 var tokyoLoc = new Loc ('Tokyo Store', 3,24, 1.2);
 tokyoLoc.setCookiesEachHour();
 tokyoLoc.setCookieSum();
-
 var dubaiLoc = new Loc ('Dubai Store', 11, 38, 3.7);
 dubaiLoc.setCookiesEachHour();
 dubaiLoc.setCookieSum();
-
 var parisLoc = new Loc ('Paris Store', 20, 38, 2.3);
 parisLoc.setCookiesEachHour();
 parisLoc.setCookieSum();
-
 var limaLoc = new Loc ('Lima Store', 2, 16, 4.6);
 limaLoc.setCookiesEachHour();
 limaLoc.setCookieSum();

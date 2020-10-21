@@ -36,9 +36,9 @@ function random(custMin, custMax, cookiesEachHour) {
   return Math.floor(Math.random() * ((custMax - custMin) + custMin) * cookiesEachHour);
 }
 
-******--------------^^^^^^Everything ABOVE is complete - this is the code to create the stores and calculations^^^^^^-------------------******
+// ******--------------^^^^^^Everything ABOVE is complete - this is the code to create the stores and calculations^^^^^^-------------------******
 
-**----------Everything BELOW is to create the table of sales data-------------**
+// **----------Everything BELOW is to create the table of sales data-------------**
 
 var parentElement = document.getElementById('locations');
 
