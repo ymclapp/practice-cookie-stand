@@ -29,3 +29,8 @@ A different background color for elements such boxes and tables (so make sure th
 Anything else you’d like to add related to style. But remember: simplicity, clarity, and consistency are good things in design.
 Be thoughtful about layout and overall organization of the page.
 Include all of the typical stuff that you’ll find on the home page of a business: locations, hours, contact information, some text about how awesome the business is, etc. Be creative, and again, think about what is meaningful to a typical end user.
+
+Additional Stretch
+Mock up an order form that would be public facing (store.html) so that visitors to the website can order salmon cookies and swag. That form would need to receive all of the things you’d expect on an order form: name, address, payment info, products to order, quantities, special instructions, and so on.
+
+A second ‘private’ page (order-processing.html) that shows a list of pending orders and the individual order details. The business owner can then process the orders by clicking a button next to the order that then moves that list item to a ‘Filled Orders’ list at the bottom of the page.

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Pat's Salmon Cookies - Shopping Page</title>
+    <a href = "index.html">Home Page</a>
+    <a href = "shipping.html">Shipping Form</a>
+</head>
+<body> 
+    <header>
+        <h1 id = "salesHeader">Pat's Salmon Cookie Stand Shopping Page</h1>
+    </header>
+    <main id = "merchandise">
+        <table id = "merchandiseTable">
+            <thead id = "merchandiseTableHead">
+                <tr id = "merchandiseTableHeadRow">
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+
+        <form id = "shopping">
+            <div>
+                <fieldset>
+                    <legend>
+                        <font size = "+2">Time to Shop!!</font>
+                    </legend>
+                    <p>Our wonderful cotton blend tshirts run true to size and are the softest you will ever have on your skin.  Sizes are all unisex.
+                    <br><br>
+                    If bling is more your thing, we got you covered!
+                    </p>
+                    <label for = "merchItems"><b>Item</b></label>
+                    <input list = "merchItems" name = "merchItems"> <datalist id = "merchItems">
+                        <option value = "Maroon Salmon">
+                        <option value = "White Salmon">
+                        <option value = "Take me home tonight">
+                        <option value = "I Heart Pat's">
+                        <option value = "Salmon Keychain">
+                        <option value = "Salmon Lapel Pin">
+                        <option value = "Got Cookies Sticker">
+                        <option value = "Cookies for everyone coozie">
+                    </datalist>
+                    
+                    <label for = "shirtSizes"><b>Size</b></label>
+                    <input list = "shirtSizes" name = "shirtSize"> <datalist id = "shirtSizes">
+                        <option value = "X Small">
+                        <option value = "Small">
+                        <option value = "Medium">
+                        <option value = "Large">
+                        <option value = "X Large">
+                        <option value = "XX Large">
+                        <option value = "XXX Large">
+                    </datalist>  
+                                 
+                    <!-- <p>Need some bling?  We got your secret crush right here!</p>
+                    <label for = "bling"><b>Bling!</b></label>
+                    <input list = "bling" name = "bling"> <datalist id = "bling">
+                        <option value = "Salmon Keychain">
+                        <option value = "Salmon Lapel Pin">
+                        <option value = "Got Cookies Sticker">
+                        <option value = "Cookies for everyone coozie">
+                    </datalist> -->
+                    
+                    <p>Addicted to the cookies, then you just have to get them shipped to you!</p>
+                    <label for = "subscription"><b>Give me cookies!</b></label>
+                    <input list = "subscription" name = "subscription"> <datalist id = "subscription">
+                        <option value = "Just this once please">
+                        <option value = "Gotta have them every month">
+                        <option value = "Can only handle them every six months">
+                        <option value = "My dentist says only once a year">
+                    </datalist>
+
+                    <button id = "order">NEXT</button>
+
+                </fieldset>
+            </div>
+        </form>
+          
+         
+    </main>
+
+    <script src="js/shopping.js"></script>
+</body>
+
+</html>
