@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css" /> -->
+    <title>Pat's Salmon Cookies - Shopping Page</title>
+    <a href = "index.html">Home Page</a>
+    <a href = "shipping.html">Shipping Form</a>
+</head>
+<body>
+<header id = "main-header" class = "bg-success text-white p-4 mb-3">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-6">
+                <h1 id = "shop-header-title">Merchandise</h1>
+            </div>
+            <div class = "col-md-6 align-slef-center">
+                <input type = "text" class = "form-control" id = "filter" placeholder = "Select Item">
+            </div>
+        </div>
+    </div>
+
+</header>
+<div class = "container">
+    <div id = "main" class = "card card-body">
+        <h2 class = "title">Select Items</h2>
+        <form id = "addForm" class = "form-inline mb-3">
+            <!-- <input type = "text" class = "form-control mr-2" id = "item"> -->
+            <input list = "merchItems" name = "merchItems" class = "form-control mr-2" id = "item">
+            <datalist id = "merchItems">
+                <option value = "Maroon Salmon T Shirt">
+                    <option value = "White Salmon T Shirt">
+                    <option value = "Take me home tonight T Shirt">
+                    <option value = "I Heart Pat's T Shirt">
+                    <option value = "Salmon Keychain">
+                    <option value = "Salmon Lapel Pin">
+                    <option value = "Got Cookies Sticker">
+                    <option value = "Cookies for everyone Coozie">
+                </datalist>
+            <input type = "submit" class = "btn btn-dark" value = "Submit">
+        </form>
+        <h2 class = "title">Items</h2>
+        <ul id = "items" class = "list-group">
+            <!-- <li class = "list-group-item">Item 1<button class = "btn btn-danger btn-sm floate-right delete">X</button></li>
+            <li class = "list-group-item">Item 2<button class = "btn btn-danger btn-sm floate-right delete">X</button></li> -->
+        </ul>
+    </div>
+</div>
+ 
+ 
+    <script src = "/js/newShop.js"></script>   
+</body>
